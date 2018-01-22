@@ -1,0 +1,40 @@
+<div class="aboutPage">
+    <div>
+        <h3>
+            <span class="hotelName">{{hotel.name | translate}}</span>
+            <span class="starReting" [innerHTML]="hotel.starReting"></span>
+        </h3>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <div class="hotelAddress">{{hotel.address | translate}}</div>
+    <br>
+    <span class="hotelLocation" [innerHTML]="hotel.location"></span>
+    <br>
+    <hr>
+    <br>
+    <div class="hotelAbout">
+        <p>{{hotel.about | translate}}</p>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <div class="listFacil">
+        <span *ngFor="let facil of hotel.facilities">
+            <span class="colorGolly">✓</span>{{facil.value | translate}};</span>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <div class="listFoto" *ngFor="let photo of hotel.fotoAddress">
+        <img src="./assets/img/hotel/{{photo.value | translate}}">
+    </div>
+    <br>
+    <hr>
+    <br>
+
+</div>

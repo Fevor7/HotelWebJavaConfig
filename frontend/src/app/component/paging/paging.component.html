@@ -1,0 +1,13 @@
+<div *ngIf="quantityPage()>1">
+    <div align="center" class="paging">
+        <span>{{'paging_wordPage' | translate}}: </span>
+        <span *ngFor="let number of quantityList">
+            <a *ngIf="(number!==(listPage.page+1));else elseBlock" (click)="switchPage(number-1)" [ngClass]="{linkSpan:true}">
+                {{number}}
+            </a>
+            <ng-template #elseBlock>
+                <span>{{number}}</span>
+            </ng-template>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="clientOrder">
+    <br>
+    <div>
+        <h3>{{'newOrder_header' | translate}}</h3>
+    </div>
+
+    <span>{{'newOrder_checkIn' | translate}}</span>
+    <br>
+    <input type="date" class="dateStart" value="dateStart" name="dateStart" [(ngModel)]="order.dateStart">
+    <br>
+    <br>
+    <span>{{'newOrder_checkOut' | translate}}</span>
+    <br>
+    <input type="date" class="dateEnd" value="{{date}}" [(ngModel)]="order.dateEnd">
+    <br>
+    <br>
+    <span>{{'newOrder_person' | translate}}</span>
+    <br>
+
+    <select class="person" [(ngModel)]="order.personNumber">
+        <option>{{'newOrder_select' | translate}}</option>
+        <option *ngFor="let number of sequenceNumber">{{number}}</option>
+    </select>
+    <br>
+    <br>
+
+    <span>{{'newOrder_bed' | translate}}</span>
+    <br>
+    <select class="bed" value="bedNumber" name="bedNumber" [(ngModel)]="order.bedNumber">
+        <option>{{'newOrder_select' | translate}}</option>
+        <option *ngFor="let number of sequenceNumber">{{number}}</option>
+    </select>
+    <br>
+    <br>
+
+    <span>{{'newOrder_typeRoom' | translate}}</span>
+    <br>
+    <select class="typeRoom" [(ngModel)]="typeRoom.id">
+        <option *ngFor="let unit of listTypeRoom" value="{{unit?.id}}">{{unit?.value | translate}}</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    <input type="button" value="{{'newOrder_sendButton' | translate}}" class="sendApplocationButton" (click)="createNewOrder()"
+    />
+    <br>
+    <br>
+    <!--<input type="hidden" value="<fmt:message key="orderOk"/>" class="orderOk">-->
+    <!--<input type="hidden" value="<fmt:message key="errorBed"/>" class="messageErrorBed">-->
+    <!--<input type="hidden" value="<fmt:message key="errorData"/>" class="messageErrorData">-->
+    <!--<input type="hidden" value="<fmt:message key="errorPerson"/>" class="messageErrorPerson">-->
+    <!--<input type="hidden" value="<fmt:message key="errorCheckIn"/>" class="errorCheckIn">-->
+    <!--<input type="hidden" value="<fmt:message key="errorCheckOut"/>" class="errorCheckOut">-->
+    <span class="errorOrder"></span>
+</div>
+
+
+<slider></slider>
+
+<notification *ngIf="notificationDisplay" [(notificationDisplay)]=notificationDisplay [titleTranslate]=createOrderMessage></notification>

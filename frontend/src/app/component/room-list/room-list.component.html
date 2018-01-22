@@ -1,0 +1,34 @@
+<div *ngIf="listPage?.data;else elseBlock">
+    <paging [listPage]="listPage" (changePage)="switchPage($event)"></paging>
+    <div class="windowRoom" *ngFor="let room of listPage.data">
+        <div class="winEqImg">
+            <img class="imageRoom" src="./assets/img/room/{{room.fotoAddress}}" alt="test">
+        </div>
+        <div align="center" class="divInfo">
+            <span class="titleRoom">№: </span>
+            <span class="numberInsert">{{room.number}}</span>
+            <br>
+
+            <span class="titleRoom">{{'roomList_type' | translate}}:</span>
+            <span class="typeRoomInsert">{{room.typeRoom.value | translate}}</span>
+            <br>
+            <span class="titleRoom">{{'roomList_size' | translate}}:</span>
+            <span class="sizeInsert">{{room.size}}</span>
+            <span>м²</span>
+            <br>
+            <span class="titleRoom">{{'roomList_person' | translate}}:</span>
+            <span class="personInsert">{{room.person}}</span>
+            <br>
+            <span class="titleRoom">{{'roomList_bed' | translate}}:</span>
+            <span class="bedInsert">{{room.bed}}</span>
+            <br>
+            <span class="titleRoom">{{'roomList_price' | translate}}:</span>
+            <span>$</span>
+            <span class="priceInsert">{{room.price}}</span>
+        </div>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+    <span>{{'windowMessage_nothingFound' | translate}}</span>
+</ng-template>

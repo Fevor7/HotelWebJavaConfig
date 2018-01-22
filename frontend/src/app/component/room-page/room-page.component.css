@@ -1,0 +1,45 @@
+.filterRoom {
+    background: #fefcea;
+    background: linear-gradient(to bottom, #004E7F, #32B0FF);
+    padding: 15px;
+    padding-top: 0;
+    border: 0px solid #19587F;
+    border-style: outset;
+    border-radius: 15px;
+    font-family: Ariel;
+    letter-spacing: 1px;
+    font-size: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 501;
+    width: 195px;
+    top: 15px;
+    left: 5px;
+    margin: 15px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    text-align: center;
+    margin-top: 35px;
+}
+
+
+
+.titleRoom {
+    color: #002F4C;
+    font-weight: 700;
+}
+
+.titleRoomPrice {
+    font-weight: 700;
+    color: #a40000;
+}
+
+.inputMinPrice, .inputMaxPrice {
+    width: 30px;
+}
+
+select, .typeRoom {
+    text-align-last: center;
+    text-align: center;
+}

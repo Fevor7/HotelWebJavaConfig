@@ -1,0 +1,25 @@
+
+a:active {
+    color: #ffff00;
+    font-weight: 900;
+}
+
+a:visited {
+    color: #ffffff;
+    font-weight: 900;
+}
+
+a {
+    color: #ffffff;
+    font-weight: 900;
+    text-decoration: underline;
+    padding: 5px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+span {
+    padding: 5px;
+}

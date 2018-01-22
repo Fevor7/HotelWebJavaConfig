@@ -1,0 +1,59 @@
+<div class="filterRoom">
+    <div>
+        <h3>{{'roomFilter_head' | translate}}</h3>
+    </div>
+
+    <span>{{'newOrder_checkIn' | translate}}</span>
+    <br>
+    <input type="date" class="dateStart" [(ngModel)]="roomRequestService.order.dateStart">
+    <br>
+    <span>{{'newOrder_checkOut' | translate}}</span>
+    <br>
+    <input type="date" class="dateEnd" [(ngModel)]="roomRequestService.order.dateEnd">
+    <br>
+    <br>
+    <span>{{'roomList_person' | translate}}</span>
+    <span>&emsp;&emsp;</span>
+    <span>{{'roomList_bed' | translate}}</span>
+    <br>
+    <select class="person" [(ngModel)]="roomRequestService.order.personNumber">
+        <option *ngFor="let number of sequenceNumber">{{number}}</option>
+    </select>
+    <span>&emsp;&emsp;&emsp;</span>
+    <select class="bed" [(ngModel)]="roomRequestService.order.bedNumber">
+        <option *ngFor="let number of sequenceNumber">{{number}}</option>
+    </select>
+    <br>
+    <br>
+    <span>{{'newOrder_typeRoom' | translate}}</span>
+    <br>
+    <select class="typeRoom" [(ngModel)]="roomRequestService.order.idTypeRoom">
+        <option *ngFor="let unit of listTypeRoom" value="{{unit?.id}}">{{unit?.value | translate}}</option>
+    </select>
+    <br>
+    <br>
+
+    <span>{{'roomList_price' | translate}}</span>
+    <br>
+    <span>{{'roomFilter_min' | translate}} $</span>
+    <input type="text" class="inputMinPrice" [(ngModel)]="roomRequestService.order.minPrice">
+    <br>
+    <input type="range" class="minPrice" min="20" max="{{roomRequestService.order.maxPrice}}" step="1" [(ngModel)]="roomRequestService.order.minPrice">
+    <br>
+    <span>{{'roomFilter_max' | translate}} $</span>
+    <input type="text" class="inputMaxPrice" [(ngModel)]="roomRequestService.order.maxPrice">
+    <br>
+    <input type="range" class="maxPrice" min="{{roomRequestService.order.minPrice}}" max="500" step="1" [(ngModel)]="roomRequestService.order.maxPrice">
+    <br>
+    <br>
+    <input type="button" value="{{'roomFilter_revert' | translate}}" class="sendApplocationButton" (click)="revert()" />
+    <span>&emsp;</span>
+    <input type="button" value="{{'roomFilter_apply' | translate}}" class="sendApplocationButton applySearchRoom" (click)="searchRoom()"
+    />
+    <br>
+    <br>
+    <span class="errorOrder"></span>
+    <span class="errorOrderRoom"></span>
+</div>
+
+<room-list [listPage]="listPage" (changePage)="switchPage($event)"></room-list>

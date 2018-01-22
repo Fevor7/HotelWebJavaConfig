@@ -1,0 +1,14 @@
+*.class
+*.classpath
+*.project
+/.settings/*
+*/.settings/*
+/build/*
+/build/
+*/build/
+/target/
+*/target/*
+/.metadata/
+*.idea
+*.iml
+*/node_modules/*

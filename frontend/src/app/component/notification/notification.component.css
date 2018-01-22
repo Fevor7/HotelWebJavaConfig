@@ -1,0 +1,31 @@
+:host {
+	background-color: #FFFFFF;
+	box-shadow: 0 0 50px rgba(140, 14, 14, 1.2);
+	padding: 25px;
+	border-radius: 15px;
+	margin: 10px;
+	position: relative;
+	z-index: 700;
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+    text-align: center;
+    color: #000000;
+}
+
+.closeMessage{
+	background-color: #1485CC;
+	background: linear-gradient(to bottom, #32B0FF, #004E7F);
+	background-position: center center;
+	background-repeat: no-repeat;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	border-radius: 9px;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 15px;
+	color: #000000;
+}

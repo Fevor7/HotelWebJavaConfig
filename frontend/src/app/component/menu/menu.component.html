@@ -1,0 +1,41 @@
+<nav class="menu">
+    <nav class="menuPart1">
+        <div class="menuStyle">
+            <ul>
+                <li class="liFirstPage">
+                    <a routerLink="">{{"menu_home" | translate}}</a>
+                </li>
+                <li class="liRoomPage">
+                    <a routerLink="room" [queryParams]=roomRequestService.order>{{'menu_rooms' | translate}}</a>
+                </li>
+                <li class="liAboutPage">
+                    <a routerLink="about">{{'menu_about' | translate}}</a>
+                </li>
+                <li class="admin">
+                    <a href="#">{{'menu_administration' | translate}}</a>
+                    <ul>
+                        <li class="liOrderList">
+                            <a href="#">{{'menu_order' | translate}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="menuPart2">
+        <div class="menuStyle">
+            <ul>
+                <li class="exit">
+                    <a href="#">{{'menu_exit' | translate}}</a>
+                </li>
+                <li></li>
+                <li class="liLogin">
+                    <input type="hidden" value="Login" class="fieldLOGIN" />
+                    <a href="#" class="login">{{'menu_login' | translate}}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</nav>
+
+<router-outlet></router-outlet>

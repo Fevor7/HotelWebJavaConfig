@@ -1,0 +1,24 @@
+body {
+    background-color: #002F4C;
+    overflow-y: scroll;
+    margin: 0;
+    color: white;
+}
+
+.sendApplocationButton{
+    background-color: #1485CC;
+    background: linear-gradient(to bottom, #32B0FF, #004E7F);
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    border-radius: 9px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    color: #000000;
+}
+.sendApplocationButton:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}/* You can add global styles to this file, and also import other style files */
