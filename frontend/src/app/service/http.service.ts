@@ -26,9 +26,8 @@ export class HttpService {
     /*
         send POST request
      */
-    postData(url: string, body: any): Observable<any> {
-        let header: HttpHeaders = new HttpHeaders({'Refresh-Header':'on'});
-        return this.http.post(this.urlBase + url, body);
+    postData(url: string, body: any, headers?: HttpHeaders): Observable<any> {
+        return this.http.post(this.urlBase + url, body, {headers: headers});
     }
 
     /*

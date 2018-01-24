@@ -8,6 +8,7 @@ import { OnDestroy } from "@angular/core/src/metadata/lifecycle_hooks";
 import { Subject } from "rxjs/Subject";
 import { TranslateService } from "@ngx-translate/core";
 import { Output } from "@angular/core/src/metadata/directives";
+import { UserService } from "../../service/user.service";
 
 @Component({
     selector: 'first-page',
@@ -31,7 +32,8 @@ export class FirstPageComponent implements OnInit, OnDestroy {
     constructor(private unitService: UnitService,
         private dataService: DataService,
         private orderService: OrderService,
-        private translate: TranslateService) { }
+        private translate: TranslateService,
+        private userService: UserService) { }
 
     /*
            initialization variable and receiving list type room

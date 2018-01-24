@@ -33,8 +33,8 @@ public abstract class DaoImpl<T> implements IDao<T>{
 		return em.find(clazz, id);
 	}
 
-	public void update(T model) {
-		em.merge(model);
+	public T update(T model) {
+		return em.merge(model);
 	}
 
 }

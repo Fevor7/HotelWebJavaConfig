@@ -12,6 +12,7 @@ import { HttpService } from "./service/http.service";
 import { UnitService } from "./service/unit.service";
 import { DataService } from "./service/data.service";
 import { OrderService } from "./service/order.service";
+import { UserService } from "./service/user.service";
 import { HeaderService } from './service/header.service'
 import { SliderComponent } from "./component/slider/slider.component";
 import { RoomService } from "./service/room.service";
@@ -68,6 +69,7 @@ const appRoutes: Routes = [
         HotelService,
         DataService,
         RoomRequestService,
+        UserService
     /*{provide: HTTP_INTERCEPTORS, useClass: HeaderService, multi: true }*/]
 })
 export class AppModule { }

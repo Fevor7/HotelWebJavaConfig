@@ -2,7 +2,9 @@ package by.htp.itacademy.hotel.controller;
 
 import javax.servlet.http.HttpSession;
 
+import by.htp.itacademy.hotel.domain.entity.UserSecurity;
 import by.htp.itacademy.hotel.exception.CommandInvalidParameterException;
+import by.htp.itacademy.hotel.service.UserSecurityService;
 import by.htp.itacademy.hotel.service.exception.ServiceException;
 import by.htp.itacademy.hotel.validator.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+    private UserSecurityService userSecurityService;
 	
 	@PostMapping("login")
 	public ResponseEntity<User> login(@RequestBody User user, HttpSession session) {
@@ -40,19 +45,25 @@ public class UserController {
 		return response;
 	}
 
-	@PostMapping
-    public ResponseEntity SignUp(@RequestBody User user, HttpSession session){
-	    ResponseEntity<User> responseEntity = null;
-        try {
-            userValidation(user);
-            userService.signUp(user);
-            responseEntity = new ResponseEntity(user, HttpStatus.OK);
-        } catch (CommandInvalidParameterException e) {
-            responseEntity = new ResponseEntity(HttpStatus.BAD_REQUEST);
-        } catch (ServiceException e) {
-            responseEntity = new ResponseEntity(HttpStatus.CONFLICT);
-        }
-        return responseEntity;
+//	@PostMapping
+//    public ResponseEntity SignUp(@RequestBody User user, HttpSession session){
+//	    ResponseEntity<User> responseEntity = null;
+//        try {
+//            userValidation(user);
+//            userService.signUp(user);
+//            responseEntity = new ResponseEntity(user, HttpStatus.OK);
+//        } catch (CommandInvalidParameterException e) {
+//            responseEntity = new ResponseEntity(HttpStatus.BAD_REQUEST);
+//        } catch (ServiceException e) {
+//            responseEntity = new ResponseEntity(HttpStatus.CONFLICT);
+//        }
+//        return responseEntity;
+//    }
+
+    @PostMapping
+    public ResponseEntity create(@RequestBody UserSecurity user){
+        userSecurityService.save(user);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @PutMapping("logOut")

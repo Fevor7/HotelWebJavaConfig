@@ -6,7 +6,7 @@ public interface IDao<T> {
 
 	void delete(Long id);
 
-	void update(T model);
+	T update(T model);
 	
 	T get(Long id);
 }
